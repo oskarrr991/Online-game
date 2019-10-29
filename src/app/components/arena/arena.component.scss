@@ -1,0 +1,45 @@
+.fighter1 {
+    height: 300px;
+    width: 200px;
+    position: relative;
+}
+
+#head {
+    position: absolute;
+    margin-left: 23px;
+}
+
+#head img {
+    height: 50px;
+    width: 50px;
+}
+
+#arms {
+    position: absolute;
+    margin-top: 55px;
+}
+
+#arms img {
+    width: 100px;
+    height: auto;
+}
+
+#torso {
+    position: absolute;
+    margin-left: 23px;
+}
+
+#torso img {
+    height: 150px;
+    width: 50px;
+}
+
+#legs {
+    position: absolute;
+    margin-top: 150px;
+}
+
+#legs img {
+    width: 100px;
+    height: auto;
+}

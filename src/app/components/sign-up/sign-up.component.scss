@@ -1,0 +1,36 @@
+.register {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+mat-card {
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 500px;
+    position: relative;
+   
+}
+button {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #4267b2;
+    color: white;
+}
+
+mat-form-field {
+    display: block !important;
+}
+.facebook-button {
+    background-color: #4267b2;
+    color: white;
+}
+
+.google-button {
+    background-color: #ea4334;
+    color: white;
+}
+
+p{
+    text-align: center;
+}

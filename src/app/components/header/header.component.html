@@ -1,0 +1,62 @@
+<!-- <div class="nav">
+  <div class="logo"><img src="../../../assets/logo.png" alt="LOGO" [routerLink]="['/main']"></div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <div class="container">
+        <div class="nav-link"><a [routerLink]="['/main']" class="menu-item">Home</a></div>
+        <div class="nav-link"><a [routerLink]="['/map']" class="menu-item">Map</a></div>
+        <div class="nav-link"><a [routerLink]="['/news']" class="menu-item">News</a></div>
+        <div class="nav-link"><a [routerLink]="['/lobby']" class="menu-item">Lobby</a></div>
+        <div *ngIf="isLoggedIn" class="nav-link"><a [routerLink]="['/profile']" class="menu-item">Profile</a></div>
+        <div class="nav-link" *ngIf="!isLoggedIn"><a [routerLink]="['/register-user']" class="menu-item">Sign Up</a>
+        </div>
+        <div class="nav-link" *ngIf="!isLoggedIn"><a [routerLink]="['/login']" class="menu-item">Login</a></div>
+        <div class="nav-link" *ngIf="isLoggedIn"><a class="menu-item" (click)="logout()">Logout</a></div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div> -->
+
+<div class="logo"><img src="../../../assets/logo.png" alt="LOGO" [routerLink]="['/main']"></div>
+<div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-xs class="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div fxShow="true" fxHide.lt-sm class="nav">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a [routerLink]="['/main']" class="menu-item">Home</a>
+        <a [routerLink]="['/map']" class="menu-item">Map</a>
+        <a [routerLink]="['/news']" class="menu-item">News</a>
+        <a [routerLink]="['/lobby']" class="menu-item">Lobby</a>
+        <a [routerLink]="['/profile']" class="menu-item" *ngIf="isLoggedIn">Profile</a>
+        <a [routerLink]="['/register-user']" class="menu-item" *ngIf="!isLoggedIn">Sign Up</a>
+        <a [routerLink]="['/login']" class="menu-item" *ngIf="!isLoggedIn">Login</a>
+        <a class="menu-item" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" mat-list-item>Close</a>
+        <a [routerLink]="['/main']" mat-list-item (click)="sidenav.toggle()">Home</a>
+        <a [routerLink]="['/map']" mat-list-item (click)="sidenav.toggle()">Map</a>
+        <a [routerLink]="['/news']" mat-list-item (click)="sidenav.toggle()">News</a>
+        <a [routerLink]="['/lobby']" mat-list-item (click)="sidenav.toggle()">Lobby</a>
+        <a [routerLink]="['/profile']" mat-list-item *ngIf="isLoggedIn"
+          (click)="sidenav.toggle()">Profile</a>
+        <a [routerLink]="['/register-user']" mat-list-item *ngIf="!isLoggedIn"
+          (click)="sidenav.toggle()">Sign Up</a>
+        <a [routerLink]="['/login']" mat-list-item *ngIf="!isLoggedIn"
+          (click)="sidenav.toggle()">Login</a>
+        <a mat-list-item (click)="logout()" *ngIf="isLoggedIn" (click)="sidenav.toggle()">Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

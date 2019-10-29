@@ -1,0 +1,86 @@
+app-forms-page {
+  .row {
+    width: 100%;
+    display: table;
+    clear: both;
+  }
+
+  .col {
+    padding: 50px; 
+  }  
+
+  #forms {
+    float: left;
+    width: 50%;
+  }
+
+  .user-details-container {
+    text-align: center;
+    float: left;
+    width: 50%;
+    padding-top: 80px; 
+
+    .user-image {
+      width: 20%;
+      border-radius: 50%;
+    }
+
+    .user-title {
+      font-size: 50px;
+      font-weight: 500;
+      display: block;
+    }
+
+    .user-bio {
+      font-size: 30px;
+      margin-top: 20px;
+      display: block;
+      color: rgba(0, 0, 0, 0.70);
+    }
+    
+    .user-bio > span {
+      width: 200px;
+    }
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .error-message {
+    font-size: 12px;
+  }
+
+  .double-line-hint {
+    .mat-input-hint-wrapper {
+      flex-wrap: wrap;
+
+      .hint-line {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  .submit-btn {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 1024px) {
+  #forms, .user-details-container {
+    width: 100% !important;
+  }
+.upl{
+  height: 50px;
+}
+.upl1{
+  height: 50px;
+}
+
+.file-container{
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  background-color: gray;
+}
+}

@@ -1,0 +1,31 @@
+<h1>{{ message }}</h1>
+<hr>
+<div class="container" fxLayout="row">
+
+  <div class="onlinePlayers" [ngStyle.lg]="{'font-size.px': 20}">
+    ONLINE PLAYERS: {{ onlinePlayers }}
+  </div>
+  <div *ngIf="roomPlayers.length === 4" class="rooms" fxFlex="100" [ngStyle.xs]="{'margin-left.px': 10, 'margin-right.px': 10, 'margin-top.px': 50, 'margin-bottom.px': 20}" [ngStyle]="{'margin-left.px': 10, 'margin-right.px': 10}" fxLayoutAlign.xs="none" fxLayoutAlign="space-evenly center" fxLayoutGap="5px" fxLayout="row" fxLayout.xs="column">
+    <div class="room1" (click)="toggleRoom(1, userId)" fxFlex="25" [ngStyle.xs]="{'height.px': 150, 'font-size.px': 13}" [ngStyle.lg]="{'height.px': 350, 'font-size.px': 20}" [ngStyle.md]="{'height.px': 250}" [ngStyle.sm]="{'height.px': 250}">
+      <p>Room 1</p>
+      <h3 [ngStyle.lg]="{'margin-top.px': 120}" [ngStyle.md]="{'margin-top.px': 70}" [ngStyle.sm]="{'margin-top.px': 70}">JOIN</h3>
+      <p class="joinedPlayers">{{ roomPlayers[0].playerCount }} players joined</p>
+    </div>
+    <div class="room2" (click)="toggleRoom(2, userId)" fxFlex="25" [ngStyle.xs]="{'height.px': 150, 'font-size.px': 13}" [ngStyle.lg]="{'height.px': 350, 'font-size.px': 20}" [ngStyle.md]="{'height.px': 250}" [ngStyle.sm]="{'height.px': 250}">
+      <p>Room 2</p>
+      <h3 [ngStyle.lg]="{'margin-top.px': 120}" [ngStyle.md]="{'margin-top.px': 70}" [ngStyle.sm]="{'margin-top.px': 70}">JOIN</h3>
+      <p class="joinedPlayers">{{ roomPlayers[1].playerCount }} players joined</p>
+    </div>
+    <div class="room3" (click)="toggleRoom(3, userId)" fxFlex="25" [ngStyle.xs]="{'height.px': 150, 'font-size.px': 13}" [ngStyle.lg]="{'height.px': 350, 'font-size.px': 20}" [ngStyle.md]="{'height.px': 250}" [ngStyle.sm]="{'height.px': 250}">
+      <p>Room 3</p>
+      <h3 [ngStyle.lg]="{'margin-top.px': 120}" [ngStyle.md]="{'margin-top.px': 70}" [ngStyle.sm]="{'margin-top.px': 70}">JOIN</h3>
+      <p class="joinedPlayers">{{ roomPlayers[2].playerCount }} players joined</p>
+    </div>
+    <div class="room4" (click)="toggleRoom(4, userId)" fxFlex="25" [ngStyle.xs]="{'height.px': 150, 'font-size.px': 13}" [ngStyle.lg]="{'height.px': 350, 'font-size.px': 20}" [ngStyle.md]="{'height.px': 250}" [ngStyle.sm]="{'height.px': 250}">
+      <p>Room 4</p>
+      <h3 [ngStyle.lg]="{'margin-top.px': 120}" [ngStyle.md]="{'margin-top.px': 70}" [ngStyle.sm]="{'margin-top.px': 70}">JOIN</h3>
+      <p class="joinedPlayers">{{ roomPlayers[3].playerCount }} players joined</p>
+    </div>
+  </div>
+
+</div>

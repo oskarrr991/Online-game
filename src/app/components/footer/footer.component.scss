@@ -1,0 +1,18 @@
+.footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 3rem;
+    width: 100%;
+}
+.footerContainer p {
+    padding-bottom: 3rem;
+}
+.footerContainer p span {
+    color: #316e9a; 
+}
+.footerContainer img{
+    height: 130px;
+    padding: 1rem;
+}

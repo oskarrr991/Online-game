@@ -1,0 +1,19 @@
+<div class="topicDialog">
+  <h1 mat-dialog-title>You can edit fields here</h1>
+  <mat-form-field>
+    <input #name matInput placeholder="Author name" [value]="data.author">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input #version matInput placeholder="Version" [value]="data.version">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input #content matInput placeholder="Content" [value]="data.content">
+  </mat-form-field>
+
+  <div class="buttons" mat-dialog-actions>
+    <button  mat-raised-button color="primary" (click)="updateNews(data.id, name.value, version.value, content.value)">Update</button>
+    <button  mat-raised-button (click)="closeNewsEditDialog()">Cancel</button>
+  </div>
+</div>

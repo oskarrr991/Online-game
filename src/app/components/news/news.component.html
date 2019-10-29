@@ -1,0 +1,50 @@
+<div id="main">
+  <div id="form" *ngIf="this.notAdmin">
+    <h2>Add an article</h2>
+    <mat-form-field>
+      <input matInput placeholder="Your name" [(ngModel)]="newsDetails.author" [formControl]="author" required>
+      <mat-error *ngIf="author.invalid">Your name must contain at least 2 letters</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="number" placeholder="Version" [(ngModel)]="newsDetails.version" [formControl]="version" required>
+      <mat-error *ngIf="version.invalid">Enter a valid version</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="Content" [(ngModel)]="newsDetails.content" [formControl]="content" required>
+      <mat-error *ngIf="content.invalid">Content must contain at least 10 letters</mat-error>
+    </mat-form-field><br>
+    <button [disabled]="author.invalid || version.invalid || content.invalid" mat-raised-button (click)="addArticle()" color="primary">Add</button>
+  </div>
+  <h1>Latest game news</h1>
+  <img src="../../../assets/images/border.png"/>
+  <div id="table" class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" fxFlex>
+      <ng-container matColumnDef="author">
+        <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+
+        <mat-cell *matCellDef="let element"><span class="mobile-label">Name: </span> {{element.author}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="version">
+        <mat-header-cell *matHeaderCellDef> Version </mat-header-cell>
+        <mat-cell *matCellDef="let element"><span class="mobile-label">Version: </span>  {{element.version}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="content">
+        <mat-header-cell *matHeaderCellDef> Content </mat-header-cell>
+        <mat-cell *matCellDef="let element"><span class="mobile-label">Content: </span>  {{element.content}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button class="action_btn" (click)="editForm(element.id, element.author, element.version, element.content)" mat-raised-button color="primary">Edit</button>
+            <button class="action_btn" (click)="confirmDelete(element.id)" mat-raised-button color="warn">Delete</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

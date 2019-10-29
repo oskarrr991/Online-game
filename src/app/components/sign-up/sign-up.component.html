@@ -1,0 +1,23 @@
+<mat-card class="register">
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="signUpForm">
+        <mat-form-field class="sign">
+            <input name = "email" type="email" class="formControl" matInput formControlName="email" placeholder="Email Address" #userEmail required>
+          <mat-error *ngIf="signUpForm.controls['email'].hasError"> At least 10 characters </mat-error>
+        </mat-form-field>
+        <mat-form-field class="sign">
+            <input name = "password" type="password" class="formControl" matInput formControlName="password" placeholder="Password" #userPwd required>
+          <mat-error *ngIf="signUpForm.controls['password'].hasError"> At least 6 characters </mat-error>
+        </mat-form-field>
+        <mat-form-field class="sign">
+            <input name = "confpassword" type="password" class="formControl" matInput formControlName="confpassword" placeholder="Confirmation Password" #userPwdConf required>
+            <mat-error *ngIf="signUpForm.controls['confpassword'].hasError"> At least 6 characters </mat-error>
+          </mat-form-field>
+      </form>
+    </mat-card-content>
+        <button [disabled]="signUpForm.invalid" mat-raised-button class="btn" (click)="signUp(userEmail.value, userPwd.value, userPwdConf.value)">Sign Up</button>
+        <p> ..or sign up with</p>
+        <button class="facebook-button" (click)="fbLogin()"  mat-flat-button color="primary">Facebook login</button>
+        <button class="google-button" (click)="googleLogin()" mat-flat-button color= "warn">Google login</button>
+  </mat-card>

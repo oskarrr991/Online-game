@@ -1,0 +1,39 @@
+// .card {
+//     box-shadow: 0  10px  20px  rgba(0,0,0,0.19), 0  6px  6px  rgba(0,0,0,0.23);
+// }
+.logIn{
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 25px;
+}
+
+mat-card {
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 500px;
+    position: relative;
+   
+}
+button {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #4267b2;
+    color: white;
+}
+
+mat-form-field {
+    display: block !important;
+}
+.facebook-button {
+    background-color: #4267b2;
+    color: white;
+}
+
+.google-button {
+    background-color: #ea4334;
+    color: white;
+}
+
+p{
+    text-align: center;
+}

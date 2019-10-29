@@ -1,0 +1,99 @@
+$break-small: 960px;
+$break-mobile: 600px;
+
+
+.roomPage {
+    min-height: 80vh;
+    width: 98%;
+    background: url('https://media.giphy.com/media/nIFXEYqtgMmKA/giphy.gif');
+    background-size: cover;
+    margin: 0 10px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.room {
+  text-align: center;
+}
+
+.players {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 15px;
+  height: 300px;
+  overflow-y: auto;
+  @media screen and (max-width: $break-small) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: $break-mobile) {
+    font-size: 10px;
+  }
+}
+
+#character {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  @media screen and (max-width: $break-mobile) {
+    display: none;
+  }
+}
+
+.message {
+  display: inline-block;
+  margin: 0 3px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.message:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+}
+
+.leave {
+  float: right;
+  margin-right: 50px;
+  @media screen and (max-width: $break-mobile) {
+    margin-bottom: 5px;
+    margin-right: 20px;
+  }
+}
+
+.chatMessages {
+    margin-top: 20px;
+    width: 62vw;
+    z-index: -1;
+    margin-left: 15px;
+    @media screen and (max-width: $break-small) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: $break-mobile) {
+      font-size: 10px;
+    }
+}
+
+.chat {
+    display: block;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 200px;
+    margin-left: 15px;
+    overflow-y: auto;
+    padding-top: 5px;
+    @media screen and (max-width: $break-small) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: $break-mobile) {
+      font-size: 10px;
+    }
+}
+
+hr {
+  background-color: grey;
+  border: 1px solid grey;
+}

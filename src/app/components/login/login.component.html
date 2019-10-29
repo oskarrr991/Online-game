@@ -1,0 +1,19 @@
+<mat-card class="logIn">
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm">
+      <mat-form-field class="log">
+          <input name = "email" type="email" class="formControl" matInput formControlName="email" placeholder="Email Address" #userEmail required autofocus>
+        <mat-error *ngIf="loginForm.controls['email'].hasError"> At least 10 characters </mat-error>
+      </mat-form-field>
+      <mat-form-field class="log">
+          <input name = "password" type="password" class="formControl" matInput formControlName="password" placeholder="Password" #userPassword required>
+        <mat-error *ngIf="loginForm.controls['password'].hasError"> At least 6 characters </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+      <button [disabled]="loginForm.invalid" mat-raised-button class="btn" (click)=" login(userEmail.value, userPassword.value)" >Sign In</button>
+      <p> ..or login with</p>
+      <button class="facebook-button" (click)="fbLogin()"  mat-flat-button color="primary">Facebook login</button>
+      <button class="google-button" (click)="googleLogin()" mat-flat-button color= "warn">Google login</button>
+</mat-card>

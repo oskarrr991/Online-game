@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="user-details-container">
+      <img id="photo" class="user-image" *ngIf="this.img" [src]="this.img"/>
+      <span class="user-title">{{ userDetailsForm.get('fullname').value }}</span>
+      <div class="user-bio"><span>{{ userDetailsForm.get('bio').value }}</span></div>
+    </div>
+    <div id="forms">
+      <div class="col">
+        <h2>User details</h2>
+        <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmitUserDetails(userDetailsForm.value)">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Full Name" formControlName="fullname" required>
+            <mat-error *ngFor="let validation of validationMess.fullname">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('fullname').hasError(validation.type) && (userDetailsForm.get('fullname').dirty || userDetailsForm.get('fullname').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Your birthday" formControlName="birthday" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngFor="let validation of validationMess.birthday">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('birthday').hasError(validation.type) && (userDetailsForm.get('birthday').dirty || userDetailsForm.get('birthday').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Gender" formControlName="gender">
+              <mat-option *ngFor="let gender of genders" [value]="gender">
+                {{ gender }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngFor="let validation of validationMess.gender">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('gender').hasError(validation.type) && (userDetailsForm.get('gender').dirty || userDetailsForm.get('gender').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <textarea matInput maxlength="256" placeholder="Bio" formControlName="bio" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+            <mat-hint align="start">Tell us about yourself</mat-hint>
+            <mat-hint align="end">{{userDetailsForm.get('bio').value.length}} / 256</mat-hint>
+            <mat-error *ngFor="let validation of validationMess.bio">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('bio').hasError(validation.type) && (userDetailsForm.get('bio').dirty || userDetailsForm.get('bio').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input #photoPath matInput placeholder="Profile photo URL" formControlName="photoPath">
+
+          </mat-form-field>
+          <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!userDetailsForm.valid">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+      <!-- <div *ngIf="currentUpload">
+        <div class="progress">
+          <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
+        </div>
+        Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+      </div> -->
+      <div class="file-container">
+                <p>Upload your avatar</p>
+             <input type="file" (change)="detectFiles($event)">
+          <button mat-flat-button
+                  [disabled]="!selectedFiles"
+                  (click)="uploadSingle()"
+                  color="primary"
+                  class="upl">
+      
+            Upload Single
+          </button>
+        </div>
+       
+      <!-- <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">file_upload</i> <input class="multi" type="file" (change)="detectFiles($event)" style="background-color: aqua;" multiple >
+            </label> -->
+            <!-- <button mat-flat-button
+                    [disabled]="!selectedFiles"
+                    (click)="uploadMulti()"
+                    color="primary"
+                    class="upl1">
+      
+              Upload Multiple
+            </button> -->
+    
+            <!-- <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+              <i class="material-icons">file_upload</i>
+              <input id="file_input_file" class="none" type="file" />
+            </label> -->
+</div>

@@ -1,0 +1,87 @@
+<div>
+  <p>Choose your Tool of Murder</p>
+  <div class="weaponWrap" *ngFor="let weapon of currentPlayer?.weaponRight">
+    <label class="container">
+      {{ weapon?.name }}
+      {{ weapon?.damage }}
+      <input type="radio" name="weapon" (click)="chooseWeapon(weapon.id)">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+</div>
+
+<p>Choose your Armor</p>
+
+<div class="armorWrap" *ngFor="let armor of currentPlayer?.armorHead">
+  <label class="container">
+    {{ armor.name }}
+    {{ armor.protec }}
+    {{ armor.id }}
+    <input type="radio" name="armor" (click)="chooseArmor(armor.protec, armor.id)">
+    <span class="checkmark"></span>
+  </label>
+</div>
+
+<div class="armorWrap" *ngFor="let armor of currentPlayer?.armorTorso">
+  <label class="container">
+    {{ armor.name }}
+    {{ armor.protec }}
+    {{ armor.id }}
+    <input type="radio" name="armor" (click)="chooseArmor(armor.protec, armor.id)">
+    <span class="checkmark"></span>
+  </label>
+</div>
+
+<div class="armorWrap" *ngFor="let armor of currentPlayer?.armorArms">
+  <label class="container">
+    {{ armor.name }}
+    {{ armor.protec }}
+    {{ armor.id }}
+    <input type="radio" name="armor" (click)="chooseArmor(armor.protec, armor.id)">
+    <span class="checkmark"></span>
+  </label>
+</div>
+
+<div class="armorWrap" *ngFor="let armor of currentPlayer?.armorLegs">
+  <label class="container">
+    {{ armor.name }}
+    {{ armor.protec }}
+    {{ armor.id }}
+    <input type="radio" name="armor" (click)="chooseArmor(armor.protec, armor.id)">
+    <span class="checkmark"></span>
+  </label>
+</div>
+
+<p>Choose your ATTACK</p>
+
+<div class="attackWrap">
+  <label class="container">
+    <input type="radio" name="attack" (click)="chooseAttack('head')">
+    <input type="radio" name="attack" (click)="chooseAttack('torso')">
+    <input type="radio" name="attack" (click)="chooseAttack('arms')">
+    <input type="radio" name="attack" (click)="chooseAttack('legs')">
+  </label>
+</div>
+
+<p>Choose your DEFENCE</p>
+
+<div class="defencekWrap">
+  <label class="container">
+    <input type="radio" name="defence" (click)="chooseDefence('head')">
+    <input type="radio" name="defence" (click)="chooseDefence('torso')">
+    <input type="radio" name="defence" (click)="chooseDefence('arms')">
+    <input type="radio" name="defence" (click)="chooseDefence('legs')">
+  </label>
+</div>
+
+<p> Current Fighter ID: {{ currentPlayer?.uid }} </p>
+<p> Current Fighter HP: {{ currentPlayer?.fighter.hp }} </p>
+
+<!-- <div class="fighter1">
+  <div id="head"><img [src]="_fight.currentPlayer?.fighter.armorHead.image"></div>
+  <div id="arms"><img [src]="_fight.currentPlayer?.fighter.armorArms.image"></div>
+  <div id="torso"><img [src]="_fight.currentPlayer?.fighter.armorTorso.image"></div>
+  <div id="legs"><img [src]="_fight.currentPlayer?.fighter.armorLegs.image"></div>
+</div> -->
+
+<div><button type="button" (click)="fight()">FIGHT</button></div>
