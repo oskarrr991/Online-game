@@ -18,7 +18,7 @@ Data is stored in NoSQL database system - Firebase</br>
 ### On home page 2 options are displayed: map and news feed
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/4.png)
 ======
-### Here every user can share their news. Admin can Edit/delete them
+### Here every user can share their news. Admin can edit/delete them
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/5.png)
 ======
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/6.png)
@@ -29,6 +29,7 @@ Data is stored in NoSQL database system - Firebase</br>
 ======
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/9.png)
 ======
+### On the map only 1 option is currently available - arena. Shop is still in progress. Here user will be able to buy armor and weapons. 
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/10.png)
 ======
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/11.png)
