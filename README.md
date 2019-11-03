@@ -3,7 +3,7 @@
 Arena is a RPG game where players fight each other</br>
 Both players choose a body part which they want to attack and defend</br>
 Afterwards the result is calculated</br>
-For example: Player1 defends his head and attacks PLayers2 chest while Player2 attacks Player's1 head and defends legs</br>
+For example: Player1 defends his head and attacks PLayer's2 chest while Player2 attacks Player's1 head and defends legs</br>
 Result: Player1 gets 0 damage while Player2 gets -30HP
 
 ## Tech info
