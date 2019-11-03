@@ -1,15 +1,17 @@
-.register {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 25px;
-}
+// .register {
+//     width: 25%;
+//     margin: 1px auto;
+//     margin-top: 25px;
+// }
 
 mat-card {
     min-width: 400px;
     max-width: 500px;
     max-height: 500px;
     position: relative;
+    margin: 1px auto;
    
+
 }
 button {
     width: 100%;
@@ -33,4 +35,11 @@ mat-form-field {
 
 p{
     text-align: center;
+}
+@media only screen and (max-width: 400px){
+    mat-card{
+        min-width: 100px;
+        max-width: 270px;
+        max-height: 460px;  
+    }
 }

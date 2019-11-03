@@ -1,6 +1,3 @@
-import { ActivatedRoute } from '@angular/router';
-import { LobbyService } from './../../services/lobby.service';
-import { IUser } from './../../models/user/user.model';
 import { AuthService } from '../../services';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   loggedIn: boolean;
 
-  constructor(private _auth: AuthService, private _route: ActivatedRoute) { }
+  constructor(private _auth: AuthService) { }
 
   ngOnInit() {
   }
@@ -24,10 +21,6 @@ export class HeaderComponent implements OnInit {
 
   public logout(): Promise<void> {
     return this._auth.logout();
-  }
-
-  public getSelectedRoute() {
-    this._route.snapshot
   }
 
 }

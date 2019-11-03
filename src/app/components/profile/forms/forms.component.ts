@@ -2,6 +2,10 @@ import { Upload } from './../../../models/upload.model';
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {AngularFireStorage, AngularFireUploadTask} from '@angular/fire/storage';
+import { Observable, from } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-forms-page',
@@ -19,6 +23,20 @@ export class FormsComponent implements OnInit {
 
   selectedFiles: FileList;
   currentUpload: Upload;
+
+   // Main task
+ task: AngularFireUploadTask;
+
+ // Progress monitoring
+ percentage: Observable<number>;
+
+ snapshot: Observable<any>;
+
+ // Download URL
+ downloadURL: Observable<string>;
+
+ // State for dropzone CSS toggling
+ isHovering: boolean;
 
   genders = [
     'Male',
@@ -52,7 +70,9 @@ export class FormsComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               public authService: AuthService,
-              /* private upSvc: UploadService */) { }
+              /* private upSvc: UploadService */
+              private db: AngularFirestore,
+              private storage: AngularFireStorage) { }
 
   ngOnInit() {
     this.createForms(this.playerObj);
@@ -94,22 +114,60 @@ export class FormsComponent implements OnInit {
     }
   }
 
-  detectFiles(event) {
-    this.selectedFiles = event.target.files;
-}
+  toggleHover(event: boolean) {
+    this.isHovering = event;
+  }
 
-uploadSingle() {
-  // const file = this.selectedFiles.item(0);
-  // this.currentUpload = new Upload(file);
-  // this.upSvc.pushUpload(this.selectedFiles);
-}
 
-uploadMulti() {
-  const files = this.selectedFiles;
-  // const filesIndex = _.range(files.length);
-  // _.each(filesIndex, (idx) => {
-  //   this.currentUpload = new Upload(files[idx]);
-  //   this.upSvc.pushUpload(this.currentUpload); }
-  // );
-}
+  startUpload(event: FileList) {
+    // The File object
+    const file = event.item(0);
+
+    // Client-side validation example
+    if (file.type.split('/')[0] !== 'image') {
+      console.error('unsupported file type :( ');
+      return;
+    }
+
+    // The storage path
+    const path = `test/${new Date().getTime()}_${file.name}`;
+    this.db.collection('photos').add( { path });
+
+    // Totally optional metadata
+    const customMetadata = { app: 'My AngularFire-powered PWA!' };
+
+    // The main task
+    this.task = this.storage.upload(path, file, { customMetadata });
+
+    // Progress monitoring
+    this.percentage = this.task.percentageChanges();
+    this.snapshot   = this.task.snapshotChanges();
+
+    // The file's download URL
+    // this.downloadURL = this.task.downloadURL();
+  }
+
+  // Determines if the upload task is active
+  isActive(snapshot) {
+    return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
+  }
+
+//   detectFiles(event) {
+//     this.selectedFiles = event.target.files;
+// }
+
+// uploadSingle() {
+//   // const file = this.selectedFiles.item(0);
+//   // this.currentUpload = new Upload(file);
+//   // this.upSvc.pushUpload(this.selectedFiles);
+// }
+
+// uploadMulti() {
+//   const files = this.selectedFiles;
+//   // const filesIndex = _.range(files.length);
+//   // _.each(filesIndex, (idx) => {
+//   //   this.currentUpload = new Upload(files[idx]);
+//   //   this.upSvc.pushUpload(this.currentUpload); }
+//   // );
+// }
 }

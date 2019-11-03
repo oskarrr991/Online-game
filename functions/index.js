@@ -2,6 +2,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
 admin.initializeApp();
+const db = admin.firestore();
 
 
 
@@ -43,4 +44,46 @@ exports.sendGoodbyeMail = functions.auth.user().onDelete(user => {
     }
     console.log('Sended');
   });
+});
+
+
+exports.matchPlayers = functions.firestore.document('rooms/{roomId}')
+  .onUpdate((change, context) => {
+    console.log('Trigger in Room with ID:')
+    console.log(context.params.roomId);
+
+  if (change.after.data().playersWaiting.length > 1) { 
+    //let matchedPlayers = change.after.data.playersWaiting.sort(() => .5 - Math.random()).slice(0, 2);
+    const waitingPlayerIds = change.after.data().playersWaiting;
+
+    db.doc('users/' + waitingPlayerIds[0]).update({
+      opponentId: waitingPlayerIds[1]
+    });
+
+    db.doc('users/' + waitingPlayerIds[1]).update({
+      opponentId: waitingPlayerIds[0]
+    });
+  }
+
+  return 0;
+  //   let firstPlayer = waitingPlayers[0];
+  //   firstPlayer.opponentId = waitingPlayers[1].id
+  //   let opponentId = '';
+  //   const currentUserPosition = matchedPlayers.indexOf(userId);
+  //   console.log(2);
+  //   if (currentUserPosition === 0) {
+  //     opponentId = matchedPlayers[1];
+  //     console.log(opponentId);
+  //   } else {
+  //     opponentId = matchedPlayers[0];
+  //     console.log(opponentId);
+  //   }
+  //   user.opponentId = opponentId;
+  //   admin.firestore.collection('users').doc(userId).set({opponentId: opponentId})
+  //   .then(function() {
+  //     console.log("Document successfully updated!");
+  // })
+  // .catch(function(error) {
+  //     console.error("Error updating document: ", error);
+  // });
 });

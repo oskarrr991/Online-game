@@ -1,25 +1,26 @@
-[debug] [2019-07-09T09:34:02.563Z] ----------------------------------------------------------------------
-[debug] [2019-07-09T09:34:02.565Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ingaq\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2019-07-09T09:34:02.566Z] CLI Version:   7.0.2
-[debug] [2019-07-09T09:34:02.566Z] Platform:      win32
-[debug] [2019-07-09T09:34:02.566Z] Node Version:  v10.11.0
-[debug] [2019-07-09T09:34:02.567Z] Time:          Tue Jul 09 2019 12:34:02 GMT+0300 (Eastern European Summer Time)
-[debug] [2019-07-09T09:34:02.567Z] ----------------------------------------------------------------------
+[debug] [2019-07-15T06:39:23.083Z] ----------------------------------------------------------------------
+[debug] [2019-07-15T06:39:23.085Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ingaq\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions:matchPlayers
+[debug] [2019-07-15T06:39:23.085Z] CLI Version:   7.0.2
+[debug] [2019-07-15T06:39:23.085Z] Platform:      win32
+[debug] [2019-07-15T06:39:23.085Z] Node Version:  v10.11.0
+[debug] [2019-07-15T06:39:23.091Z] Time:          Mon Jul 15 2019 09:39:23 GMT+0300 (Eastern European Summer Time)
+[debug] [2019-07-15T06:39:23.092Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-07-09T09:34:02.584Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-07-09T09:34:02.584Z] > authorizing via signed-in user
-[debug] [2019-07-09T09:34:02.585Z] [iam] checking project projektas-50cb2 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2019-07-09T09:34:02.587Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/projektas-50cb2:testIamPermissions  
+[debug] [2019-07-15T06:39:23.112Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-15T06:39:23.113Z] > authorizing via signed-in user
+[debug] [2019-07-15T06:39:23.113Z] [iam] checking project projektas-50cb2 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-07-15T06:39:23.115Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-15T06:39:23.115Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-15T06:39:23.387Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:23.401Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/projektas-50cb2:testIamPermissions  
 
-[debug] [2019-07-09T09:34:03.733Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:03.737Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/projektas-50cb2  
- 
-[debug] [2019-07-09T09:34:04.211Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:24.272Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'projektas-50cb2'...
 [info] 
-[info] i  deploying functions, hosting
-[debug] [2019-07-09T09:34:07.643Z] > [functions] package.json contents: {
+[info] i  deploying functions
+[debug] [2019-07-15T06:39:28.786Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -45,120 +46,47 @@
   "private": true
 }
 [info] i  functions: ensuring necessary APIs are enabled...
-[debug] [2019-07-09T09:34:07.644Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/projektas-50cb2?view=CONSUMER_VIEW  
+[debug] [2019-07-15T06:39:28.787Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/projektas-50cb2?view=CONSUMER_VIEW  
  
-[debug] [2019-07-09T09:34:07.645Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/projektas-50cb2?view=CONSUMER_VIEW  
+[debug] [2019-07-15T06:39:28.787Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/projektas-50cb2?view=CONSUMER_VIEW  
  
-[debug] [2019-07-09T09:34:09.267Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:09.583Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:30.237Z] <<< HTTP RESPONSE 200
 [info] +  functions: all necessary APIs are enabled
-[debug] [2019-07-09T09:34:09.584Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/projektas-50cb2  
+[debug] [2019-07-15T06:39:30.451Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:30.451Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/projektas-50cb2  
  
-[debug] [2019-07-09T09:34:10.600Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:10.601Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/547805430882:getServerAppConfig  
+[debug] [2019-07-15T06:39:31.282Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:31.282Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/547805430882:getServerAppConfig  
  
-[debug] [2019-07-09T09:34:11.053Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:11.058Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/projektas-50cb2/versions  
-
-[debug] [2019-07-09T09:34:12.640Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:31.616Z] <<< HTTP RESPONSE 200
 [info] i  functions: preparing functions directory for uploading...
-[debug] [2019-07-09T09:34:12.649Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/projektas-50cb2/configs  
+[debug] [2019-07-15T06:39:31.620Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/projektas-50cb2/configs  
  
-[debug] [2019-07-09T09:34:13.908Z] <<< HTTP RESPONSE 200
-[info] i  functions: packaged functions (60 KB) for uploading
-[debug] [2019-07-09T09:34:14.334Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/us-central1/functions:generateUploadUrl  
+[debug] [2019-07-15T06:39:31.980Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (60.51 KB) for uploading
+[debug] [2019-07-15T06:39:32.584Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/us-central1/functions:generateUploadUrl  
  
-[debug] [2019-07-09T09:34:15.074Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:15.076Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-42780e3b-05d2-4959-ade0-6ba8bdc2d931/46791a26-ee14-4bc3-b246-78292a5322ce.zip?GoogleAccessId=service-547805430882@gcf-admin-robot.iam.gserviceaccount.com&Expires=1562666652&Signature=ejgJu21x%2F7iNRXMltQLH%2FzdMx1ZkFIdzK8yQ6WpixlBlpMyt94D0WcSkTQfS%2BOP1%2BvyrWMrbmtIolGUo%2FoKYVJ0IhMq16XxM4bkU%2BW%2BUQGoonF%2BH%2B2Bw8XrdroFiL2cyOQfciWSTz4yCW2c4vs0k7dX7v5Rvke3McEYDC%2FT%2BfyE92N3EOrnZO3n7KA4mz7awMypdBcH%2BSLK8sZdUIe73JAlQ5kfjMBV29acD0SGpov95%2FR%2BJ7rjHeYCpY7HnMg%2BNzBVuZkJRTvhPJCXVJ4Ev1xFRZONYH5sFrzcrNVJ5EaSsb1%2FcKpKSfzY6E0%2BhBDEQPtwQ6EnfFzvZWvdUvmmlSg%3D%3D  
+[debug] [2019-07-15T06:39:33.172Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:33.173Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-42780e3b-05d2-4959-ade0-6ba8bdc2d931/54273f5d-06f1-45d5-8bef-38cee20924bb.zip?GoogleAccessId=service-547805430882@gcf-admin-robot.iam.gserviceaccount.com&Expires=1563174573&Signature=OL8N%2FkJx4TyE06tzlSnkAbRK14l8%2Fv8WMMAhVXcxX40mNJzU0EMDIfbDx6oNZTZvDhRRBuEZobBfCCyLTn%2FMEmNoh1zTdVo%2BLGxASw3WzEw0DlQ6H%2Fq9F4fT6dm2Q3cOjxErE%2Fcoa7iaMueG0rGb23hLRGLgboibnlIff6DS0YSndEoJR%2Byetzhv7P66P4pcm5wjaJ8EH%2B%2FtQyTLc36Y5IqHpkAB4JF9jevl41xfvwIJhQmUfijlQjvP4A98VjxUmIOnM7uENp%2BQNno%2BZWuJzhnNmMz1Znt25FsQdUtf5YvnIZ0nIkgAAmryry0qY1H2yFRQqe2tWTgFjtu%2B0Dmijw%3D%3D  
 
-[debug] [2019-07-09T09:34:15.806Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:33.678Z] <<< HTTP RESPONSE 200
 [info] +  functions: functions folder uploaded successfully
-[info] i  hosting[projektas-50cb2]: beginning deploy...
-[info] i  hosting[projektas-50cb2]: found 43 files in dist/Fighting-game
-[debug] [2019-07-09T09:34:15.869Z] [hosting] hash cache [ZGlzdFxGaWdodGluZy1nYW1l] load error: lines is not defined
-[debug] [2019-07-09T09:34:17.120Z] [hosting] hash cache [ZGlzdFxGaWdodGluZy1nYW1l] stored for 43 files
-[debug] [2019-07-09T09:34:17.120Z] [hosting][hash queue][FINAL]
-[debug] [2019-07-09T09:34:17.120Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/projektas-50cb2/versions/103c1abae7a7f805:populateFiles  
- <request body omitted>
-[debug] [2019-07-09T09:34:18.807Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:18.818Z] [hosting][populate queue][FINAL]
-[debug] [2019-07-09T09:34:18.818Z] [hosting] uploads queued: 13
-[debug] [2019-07-09T09:34:22.227Z] [hosting][upload queue][FINAL]
-[info] +  hosting[projektas-50cb2]: file upload complete
-[debug] [2019-07-09T09:34:22.230Z] [hosting] deploy completed after 6419ms
-[debug] [2019-07-09T09:34:22.534Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/-/functions  
+[debug] [2019-07-15T06:39:33.682Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/-/functions  
  
-[debug] [2019-07-09T09:34:23.321Z] <<< HTTP RESPONSE 200
-[info] i  functions: updating Node.js 8 function sendWelcomeMail(us-central1)...
-[debug] [2019-07-09T09:34:23.331Z] Trigger is:  {"eventTrigger":{"resource":"projects/projektas-50cb2","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"}}
-[info] i  functions: updating Node.js 8 function sendGoodbyeMail(us-central1)...
-[debug] [2019-07-09T09:34:23.342Z] Trigger is:  {"eventTrigger":{"resource":"projects/projektas-50cb2","eventType":"providers/firebase.auth/eventTypes/user.delete","service":"firebaseauth.googleapis.com"}}
-[debug] [2019-07-09T09:34:23.344Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudscheduler.googleapis.com/projectSettings/projektas-50cb2?view=CONSUMER_VIEW  
+[debug] [2019-07-15T06:39:34.203Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:34.205Z] > [functions] filtering triggers to: [
+  "projects/projektas-50cb2/locations/us-central1/functions/matchPlayers"
+]
+[info] i  functions: current functions in project: matchPlayers(us-central1), sendGoodbyeMail(us-central1), sendWelcomeMail(us-central1)
+[info] i  functions: uploading functions in project: matchPlayers(us-central1)
+[info] i  functions: updating Node.js 8 function matchPlayers(us-central1)...
+[debug] [2019-07-15T06:39:34.219Z] Trigger is:  {"eventTrigger":{"resource":"projects/projektas-50cb2/databases/(default)/documents/rooms/{roomId}","eventType":"providers/cloud.firestore/eventTypes/document.update","service":"firestore.googleapis.com"}}
+[debug] [2019-07-15T06:39:34.223Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudscheduler.googleapis.com/projectSettings/projektas-50cb2?view=CONSUMER_VIEW  
  
-[debug] [2019-07-09T09:34:24.806Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:24.814Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/us-central1/functions/sendWelcomeMail {"updateMask":"sourceUploadUrl,name,labels,runtime,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+[debug] [2019-07-15T06:39:35.528Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:35.530Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/us-central1/functions/matchPlayers {"updateMask":"sourceUploadUrl,name,labels,runtime,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
 
-[debug] [2019-07-09T09:34:24.818Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/projektas-50cb2/locations/us-central1/functions/sendGoodbyeMail {"updateMask":"sourceUploadUrl,name,labels,runtime,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
-
-[debug] [2019-07-09T09:34:25.535Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:25.553Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:25.556Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
+[debug] [2019-07-15T06:39:36.222Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:36.225Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL21hdGNoUGxheWVycy8zeEVWYklqS01aRQ  
  
-[debug] [2019-07-09T09:34:25.557Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:25.950Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:26.151Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:27.952Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:28.151Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:28.541Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:28.545Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:30.542Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:30.550Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:31.122Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:31.139Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:33.123Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:33.140Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:33.728Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:33.729Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:35.729Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:35.731Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:36.116Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:36.124Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:38.117Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:38.127Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:38.503Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:38.734Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:40.505Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:40.736Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:40.901Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:41.331Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:42.902Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:43.285Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:43.333Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:43.715Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:45.285Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:45.716Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:45.869Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:46.309Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:47.871Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRHb29kYnllTWFpbC9WS1FnV2RjOEluaw  
- 
-[debug] [2019-07-09T09:34:48.310Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cHJvamVrdGFzLTUwY2IyL3VzLWNlbnRyYWwxL3NlbmRXZWxjb21lTWFpbC8td1Noc3lXR2ZYNA  
- 
-[debug] [2019-07-09T09:34:48.455Z] <<< HTTP RESPONSE 200
-[debug] [2019-07-09T09:34:48.706Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T06:39:36.507Z] <<< HTTP RESPONSE 200

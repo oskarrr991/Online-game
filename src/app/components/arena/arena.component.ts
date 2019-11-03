@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IUser } from './../../models/user/user.model';
 import { Subscription } from 'rxjs';
 import { IWeapon } from './../../models/weapon.model';
@@ -14,6 +15,7 @@ export class ArenaComponent implements OnInit {
 
   currentPlayer: IUser;
   oponnentPlayer: IUser;
+  currentPlayerId: string;
 
   room = 'Room 4';
 
@@ -21,10 +23,13 @@ export class ArenaComponent implements OnInit {
 
   constructor(public _fight: FightService,
               public _weaponry: Weaponry,
-              public _armory: Armory) { }
+              public _armory: Armory,
+              private router: Router) { }
 
   ngOnInit() {
+    this.getCurrentPlayerId();
     this.getPlayerIds(this.room);
+    this.getCurrentPlayer(this.currentPlayerId);
   }
 
   // GETING IDs and OBJECTS of PLAYER and hers OPPONENT
@@ -48,7 +53,7 @@ export class ArenaComponent implements OnInit {
   }
 
   private getCurrentPlayerId(): string {
-    return localStorage.getItem('user');
+    return this.currentPlayerId = localStorage.getItem('user');
   }
 
   private getCurrentPlayer(id: string): Subscription {
@@ -148,6 +153,13 @@ export class ArenaComponent implements OnInit {
 
   private calculateCurrentLosses(player: IUser): IUser {
     return this._fight.calculateCombat(this.currentPlayer, player);
+  }
+
+  public leaveArena() {
+    this.currentPlayer.opponentId = '';
+    this.currentPlayer.room = -1;
+    this._fight.updatePlayer(this.currentPlayerId, this.currentPlayer);
+    this.router.navigateByUrl('/lobby');
   }
 
 }

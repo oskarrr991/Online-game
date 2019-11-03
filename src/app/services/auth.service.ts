@@ -103,6 +103,7 @@ export class AuthService {
     birthDate: '',
     gender: '',
     bio: '',
+    opponentId: ''
   };
 
   loggedIn: string;
@@ -236,6 +237,7 @@ export class AuthService {
       birthDate: '',
       gender: '',
       bio: '',
+      opponentId: ''
     };
 
     return userRef.set(userData, {
@@ -337,6 +339,7 @@ export class AuthService {
     this.userData.online = false;
     this.userData.emailVerified = false;
     this.userData.room = -1;
+    this.userData.opponentId = '';
   }
 
 

@@ -77,10 +77,26 @@ app-forms-page {
   height: 50px;
 }
 
-.file-container{
-  width: 250px;
-  height: 250px;
-  border: 1px solid black;
-  background-color: gray;
 }
+
+.dropzone { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  height: 300px;
+  border: 2px solid red;
+  border-radius: 5px;
+  background: white;
+  margin: 0 auto;
+  width: 50%;
+
+  &.hovering {
+      border: 2px solid #f16624;
+      color: #dadada !important;
+  }
+}
+
+progress::-webkit-progress-value {
+  transition: width 0.1s ease;
 }

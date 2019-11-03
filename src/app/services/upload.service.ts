@@ -61,14 +61,14 @@ export class UploadService {
     if (file.type.split('/')[0] !== 'image') {
       console.error('unsupported file type!');
     }
-    
+
 
     // storage path
     this.imgPath = `uploads/${file.name}`;
     const fileRef = this.afStorage.ref(this.imgPath);
     this.db.collection(`${this.basePath}/`).add(this.upload);
     // const save = this.db.collection(`${this.basePath}/`).add(this.upload);
-   
+
     // optional metadata
     // const customMetadata = { app: 'Angular-FireBase-Gallery'};
     // main task
@@ -80,8 +80,6 @@ export class UploadService {
     // get notified when the download URL is available
     // this.task.snapshotChanges()
     // .subscribe();
-
-
   }
 
 

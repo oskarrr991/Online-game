@@ -19,4 +19,5 @@ export interface IUser {
     birthDate: string;
     gender: string;
     bio: string;
+    opponentId: string;
 }

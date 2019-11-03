@@ -1,3 +1,4 @@
+import { ArenaComponent } from './components/arena/arena.component';
 import { CannotFoundComponent } from './components/404/404.component';
 import { AuthGuard } from './auth.guard';
 import { RoomComponent } from './components/room/room.component';
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path: 'lobby', component: LobbyComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'arena', component: ArenaComponent, canActivate: [AuthGuard]
   },
   {
     path: 'room/:roomNum', component: RoomComponent, canActivate: [AuthGuard]

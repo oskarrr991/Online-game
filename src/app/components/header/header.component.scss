@@ -61,3 +61,12 @@ mat-sidenav-container {
   padding: 1rem;
   transition: 0.3s ease;
 }
+
+.marked {
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+}
+
+.marked-mobile {
+  background-color: rgb(235, 235, 235);
+}

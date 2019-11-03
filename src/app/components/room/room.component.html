@@ -3,6 +3,8 @@
 <div class="roomPage" fxLayout="column">
 
   <div class="column">
+    <button *ngIf="!lookingForFight" (click)="lookForAFight()">Look for a fight</button>
+    <button *ngIf="lookingForFight" (click)="stopLookingForAFight()">Stop looking</button>
     <button class="leave" mat-raised-button color="warn" (click)="leaveRoom()">Leave</button>
   </div>
 
@@ -38,7 +40,8 @@
 
     </div>
 
-    <img id="character" fxFlex="25" src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/359/420/618/636272697874197438.png">
+    <img id="character" fxFlex="25"
+      src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/359/420/618/636272697874197438.png">
 
   </div>
 

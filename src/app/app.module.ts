@@ -1,3 +1,4 @@
+import { DropZoneDirective } from './directives/dropzone.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CannotFoundComponent } from './components/404/404.component';
@@ -68,7 +69,7 @@ import { RoomComponent } from './components/room/room.component';
 import { FormsComponent } from './components/profile/forms/forms.component';
 import { DeleteNewsDialogComponent } from './dialogs/delete-news-dialog/delete-news-dialog.component';
 import { EditNewsDialogComponent } from './dialogs/edit-news-dialog/edit-news-dialog.component';
-
+import { FileSizePipe } from './pipes/file-size.pipe';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,9 @@ import { EditNewsDialogComponent } from './dialogs/edit-news-dialog/edit-news-di
     CannotFoundComponent,
     FormsComponent,
     DeleteNewsDialogComponent,
-    EditNewsDialogComponent
+    EditNewsDialogComponent,
+    DropZoneDirective,
+    FileSizePipe
   ],
   imports: [
     AppRoutingModule,
