@@ -1,13 +1,15 @@
-# FightingGame
+# Short game intro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.</br>
-Data is stored in NoSQL database system - Firebase</br>
-Short game intro: </br>
 Arena is a RPG game where players fight each other</br>
 Both players choose a body part which they want to attack and defend</br>
 Afterwards the result is calculated</br>
 For example: Player1 defends his head and attacks PLayers2 chest while Player2 attacks Player's1 head and defends legs</br>
 Result: Player1 gets 0 damage while Player2 gets -30HP
+
+## Tech info
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.</br>
+Data is stored in NoSQL database system - Firebase</br>
+Directives, components, pipes, dialogs, models and services are used in this project
 
 ## Screenshots
 
