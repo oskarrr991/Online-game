@@ -32,6 +32,8 @@ Data is stored in NoSQL database system - Firebase</br>
 ### On the map only 1 option is currently available - arena. Shop is still in progress. Here user will be able to buy armor and weapons. 
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/10.png)
 ======
+### 4 rooms are available for players in the lobby
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/11.png)
 ======
+### Here players will be able to search for a game and combat. Currently only chat option is available
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/12.png)
