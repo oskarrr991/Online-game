@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/1.png)
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/2.png)
-![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/3.png)
+![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/3.1.png)
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/4.png)
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/5.png)
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/6.png)
