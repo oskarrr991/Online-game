@@ -15,9 +15,10 @@ Data is stored in NoSQL database system - Firebase</br>
 ======
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/3.1.png)
 ======
-### On home page 2 option are displayed: map and news feed
+### On home page 2 options are displayed: map and news feed
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/4.png)
 ======
+### Here every user can share their news. Admin can Edit/delete them
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/5.png)
 ======
 ![image](https://github.com/oskarrr991/Online-game/blob/master/screenshots/6.png)
